@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { DisclaimerModal } from "@/components/layout/disclaimer-modal";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-ivory text-ink font-sans pt-24">
+        <DisclaimerModal />
         <Navbar />
         <main className="flex-grow">
           {children}
