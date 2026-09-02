@@ -214,7 +214,7 @@ export default function Home() {
               <Link href="/contact">REQUEST A CONSULTATION</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="rounded-none h-14 px-10 text-sm font-medium tracking-wide border-ink text-ink hover:bg-ink/5">
-              <Link href="tel:+910000000000">CALL US</Link>
+              <Link href="tel:+919739456288">CALL US</Link>
             </Button>
           </div>
         </div>
