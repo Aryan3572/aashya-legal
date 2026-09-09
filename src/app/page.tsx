@@ -5,6 +5,7 @@ import { ArrowRight, Scale, Shield, Globe2, Briefcase, MapPin } from "lucide-rea
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { practiceAreas } from "@/data/practice-areas";
+import { ClientTestimonials } from "@/components/common/client-testimonials";
 
 const FADE_UP_ANIMATION_VARIANTS = {
   hidden: { opacity: 0, y: 30 },
@@ -47,8 +48,8 @@ export default function Home() {
                   variants={FADE_UP_ANIMATION_VARIANTS}
                   className="font-heading text-4xl md:text-6xl lg:text-7xl font-medium text-white leading-[1.1] mb-6"
                 >
-                  LEGAL COUNSEL FOR A <br className="hidden md:block" />
-                  <span className="text-bronze italic">CHANGING INDIA</span>
+                  WHERE HOPE <br className="hidden md:block" />
+                  <span className="text-bronze italic">MEETS JUSTICE</span>
                 </motion.h1>
                 <motion.p 
                   variants={FADE_UP_ANIMATION_VARIANTS}
@@ -201,6 +202,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Client Testimonials */}
+      <ClientTestimonials />
 
       {/* CTA Section */}
       <section className="py-24 bg-stone-brand/30 border-y border-stone-brand/50">

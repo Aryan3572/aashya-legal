@@ -8,15 +8,46 @@ import { Button } from "@/components/ui/button";
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    matter: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          practiceArea: formData.matter,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send consultation request.");
+      }
+
       setIsSubmitted(true);
-    }, 1500);
+    } catch (err: any) {
+      setErrorMessage(err.message || "An unexpected error occurred. Please try calling us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -142,6 +173,12 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {errorMessage && (
+                    <div className="p-4 bg-red-50 border border-red-200 text-red-800 text-xs leading-relaxed">
+                      {errorMessage}
+                    </div>
+                  )}
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium text-ink">Full Name</label>
@@ -149,6 +186,8 @@ export default function ContactPage() {
                         type="text" 
                         id="name" 
                         required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full bg-ivory/30 border border-ink/20 p-3 text-ink focus:outline-none focus:border-bronze transition-colors"
                         placeholder="Your name"
                       />
@@ -159,6 +198,8 @@ export default function ContactPage() {
                         type="tel" 
                         id="phone" 
                         required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full bg-ivory/30 border border-ink/20 p-3 text-ink focus:outline-none focus:border-bronze transition-colors"
                         placeholder="+91 98765 43210"
                       />
@@ -171,6 +212,8 @@ export default function ContactPage() {
                       type="email" 
                       id="email" 
                       required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full bg-ivory/30 border border-ink/20 p-3 text-ink focus:outline-none focus:border-bronze transition-colors"
                       placeholder="@example.com"
                     />
@@ -181,14 +224,17 @@ export default function ContactPage() {
                     <select 
                       id="matter" 
                       required
+                      value={formData.matter}
+                      onChange={(e) => setFormData({ ...formData, matter: e.target.value })}
                       className="w-full bg-ivory/30 border border-ink/20 p-3 text-ink focus:outline-none focus:border-bronze transition-colors"
                     >
                       <option value="">Select a practice area...</option>
-                      <option value="corporate">Corporate & Commercial</option>
-                      <option value="litigation">Civil Litigation</option>
-                      <option value="ip">Intellectual Property</option>
-                      <option value="real-estate">Real Estate</option>
-                      <option value="other">Other</option>
+                      <option value="Corporate & Commercial">Corporate & Commercial</option>
+                      <option value="Civil Litigation">Civil Litigation</option>
+                      <option value="Intellectual Property">Intellectual Property</option>
+                      <option value="Real Estate">Real Estate</option>
+                      <option value="Technology & AI Law">Technology & AI Law</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                   
@@ -198,6 +244,8 @@ export default function ContactPage() {
                       id="message" 
                       rows={4}
                       required
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full bg-ivory/30 border border-ink/20 p-3 text-ink focus:outline-none focus:border-bronze transition-colors resize-none"
                       placeholder="Please provide a brief overview of your legal requirement..."
                     ></textarea>
@@ -206,9 +254,9 @@ export default function ContactPage() {
                   <Button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className="w-full bg-bronze hover:bg-bronze/90 text-ivory rounded-none h-14 text-sm tracking-wide font-medium mt-4"
+                    className="w-full bg-bronze hover:bg-bronze/90 text-ivory rounded-none h-14 text-sm tracking-wide font-medium mt-4 cursor-pointer"
                   >
-                    {isSubmitting ? "SUBMITTING..." : "REQUEST CONSULTATION"}
+                    {isSubmitting ? "SENDING REQUEST..." : "SUBMIT REQUEST"}
                   </Button>
                   
                   <p className="text-xs text-ink/50 text-center font-light pt-2">

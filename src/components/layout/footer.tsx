@@ -40,6 +40,12 @@ export function Footer() {
               <li>
                 <Link href="/careers" className="hover:text-bronze transition-colors">Careers</Link>
               </li>
+              <li>
+                <Link href="/privacy" className="hover:text-bronze transition-colors">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link href="/cookie" className="hover:text-bronze transition-colors">Cookie Policy</Link>
+              </li>
             </ul>
           </div>
 
@@ -51,10 +57,10 @@ export function Footer() {
                 <Link href="/practice-areas/corporate-commercial-law" className="hover:text-bronze transition-colors">Corporate & Commercial</Link>
               </li>
               <li>
-                <Link href="/practice-areas/civil-law-litigation" className="hover:text-bronze transition-colors">Civil Law & Litigation</Link>
+                <Link href="/practice-areas/litigation-dispute-resolution" className="hover:text-bronze transition-colors">Civil Law & Litigation</Link>
               </li>
               <li>
-                <Link href="/practice-areas/technology-ai-law" className="hover:text-bronze transition-colors">Technology & AI</Link>
+                <Link href="/practice-areas/technology-digital-data" className="hover:text-bronze transition-colors">Technology & AI</Link>
               </li>
               <li>
                 <Link href="/practice-areas/intellectual-property" className="hover:text-bronze transition-colors">Intellectual Property</Link>
@@ -105,12 +111,27 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-ivory/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-ivory/50">
-          <p>&copy; {new Date().getFullYear()} Aashya Legal. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="hover:text-bronze transition-colors">Privacy Policy</Link>
-            <Link href="/cookie" className="hover:text-bronze transition-colors">Cookie Policy</Link>
-            <Link href="/disclaimer" className="hover:text-bronze transition-colors">Disclaimer</Link>
+        <div className="border-t border-ivory/15 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+          <p className="text-ivory/60">&copy; {new Date().getFullYear()} Aashya Legal. All rights reserved.</p>
+          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+            <Link 
+              href="/privacy" 
+              className="text-ivory/90 hover:text-bronze hover:border-bronze px-3 py-1.5 bg-ivory/5 border border-ivory/15 transition-all uppercase tracking-wider font-medium text-[11px]"
+            >
+              Privacy Policy
+            </Link>
+            <Link 
+              href="/cookie" 
+              className="text-ivory/90 hover:text-bronze hover:border-bronze px-3 py-1.5 bg-ivory/5 border border-ivory/15 transition-all uppercase tracking-wider font-medium text-[11px]"
+            >
+              Cookie Policy
+            </Link>
+            <Link 
+              href="/disclaimer" 
+              className="text-ivory/90 hover:text-bronze hover:border-bronze px-3 py-1.5 bg-ivory/5 border border-ivory/15 transition-all uppercase tracking-wider font-medium text-[11px]"
+            >
+              Disclaimer
+            </Link>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Scale, Award, Users } from "lucide-react";
+import { ClientTestimonials } from "@/components/common/client-testimonials";
 
 export const metadata = {
   title: "About Us | Aashya Legal",
@@ -26,8 +27,8 @@ const teamMembers = [
   {
     name: "Adv. Aiswarya",
     role: "Advocate | Legal Associate",
-    credentials: "B.B.A., LL.B.",
-    bio: "Adv. Aiswarya is a legal professional engaged in legal research, drafting, documentation, and litigation support. She works across matters requiring detailed legal analysis and assists in developing well-structured and practical legal strategies for clients. Her approach combines strong research capabilities with attention to detail and a commitment to delivering precise and effective legal work.",
+    credentials: "B.B.A., LL.B., LL.M. (Corporate Law)",
+    bio: "Adv. Aiswarya is a dedicated legal professional with a focus on legal research, drafting, corporate documentation, and litigation support. She assists in analysing complex legal issues and developing structured, commercially practical strategies tailored to the needs of clients. Her approach is defined by meticulous research, precision in drafting, and a strong commitment to delivering thoughtful and effective legal solutions.",
     areas: ["Legal Research", "Drafting & Documentation", "Litigation Support", "Corporate & Commercial Matters"]
   },
   {
@@ -36,6 +37,20 @@ const teamMembers = [
     credentials: "B.A., LL.B.",
     bio: "Adv. Shaiwal Kumar is engaged in legal research, drafting, case preparation, and litigation assistance. He contributes to the firm's work through structured legal analysis, preparation of pleadings and legal documents, and comprehensive case research. He brings a diligent and analytical approach to legal practice, with a focus on developing clear, well-researched, and strategically sound legal solutions.",
     areas: ["Legal Research", "Drafting", "Litigation Support", "Case Preparation", "Legal Advisory"]
+  },
+  {
+    name: "Adv. Divya Anand",
+    role: "Advocate",
+    credentials: "LL.B.",
+    bio: "Adv. Divya Anand is a legal professional engaged in legal research, drafting, documentation, and litigation support. She assists in the analysis of legal matters and the preparation of well-structured legal documents, with a focus on accuracy, clarity, and attention to detail. Her approach reflects a commitment to delivering practical and effective legal assistance to clients.",
+    areas: ["Legal Research", "Drafting", "Litigation Support", "Case Preparation", "Legal Advisory"]
+  },
+  {
+    name: "Adv. Homi Chauhan",
+    role: "Advocate | Legal Associate",
+    credentials: "B.A., LL.B., LL.M.",
+    bio: "Adv. Homi Chauhan is a legal professional with expertise in Criminal Law, Criminal Litigation, Bail Matters, Trial Proceedings, and Legal Advisory. He is actively engaged in legal research, drafting, case preparation, and representation before courts and judicial forums. His practice focuses on providing strategic and practical legal assistance in criminal and allied legal matters, with a strong emphasis on effective representation and case management.",
+    areas: ["Criminal Litigation", "Bail Matters", "Trial Proceedings", "Legal Advisory"]
   }
 ];
 
@@ -133,6 +148,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Client Testimonials */}
+      <ClientTestimonials className="border-t border-ink/10" />
 
       {/* Commitment Section */}
       <section className="py-24 bg-ink text-ivory">

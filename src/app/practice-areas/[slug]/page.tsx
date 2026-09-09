@@ -10,9 +10,21 @@ interface Props {
   }>;
 }
 
+const SLUG_ALIASES: Record<string, string> = {
+  "civil-law-litigation": "litigation-dispute-resolution",
+  "civil-litigation": "litigation-dispute-resolution",
+  "technology-ai-law": "technology-digital-data",
+  "technology-ai": "technology-digital-data",
+};
+
+function getPracticeArea(slug: string) {
+  const normalizedSlug = SLUG_ALIASES[slug] || slug;
+  return practiceAreas.find((p) => p.slug === normalizedSlug);
+}
+
 export async function generateMetadata({ params }: Props) {
   const resolvedParams = await params;
-  const practice = practiceAreas.find((p) => p.slug === resolvedParams.slug);
+  const practice = getPracticeArea(resolvedParams.slug);
   
   if (!practice) {
     return {
@@ -27,14 +39,18 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  return practiceAreas.map((practice) => ({
+  const baseParams = practiceAreas.map((practice) => ({
     slug: practice.slug,
   }));
+  const aliasParams = Object.keys(SLUG_ALIASES).map((slug) => ({
+    slug,
+  }));
+  return [...baseParams, ...aliasParams];
 }
 
 export default async function PracticeAreaDetail({ params }: Props) {
   const resolvedParams = await params;
-  const practice = practiceAreas.find((p) => p.slug === resolvedParams.slug);
+  const practice = getPracticeArea(resolvedParams.slug);
 
   if (!practice) {
     notFound();
