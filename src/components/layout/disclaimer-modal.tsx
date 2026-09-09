@@ -10,18 +10,22 @@ export function DisclaimerModal() {
 
   useEffect(() => {
     setMounted(true);
-    const hasAccepted = localStorage.getItem("aashya_legal_disclaimer_accepted");
+    // Clear any previous permanent localStorage flag so disclaimer is not permanently blocked
+    localStorage.removeItem("aashya_legal_disclaimer_accepted");
+
+    // Use sessionStorage so the disclaimer displays whenever the website is opened in a new session
+    const hasAccepted = sessionStorage.getItem("aashya_legal_disclaimer_accepted");
     if (!hasAccepted) {
-      // Prevent scrolling when modal is open
       document.body.style.overflow = "hidden";
       setShowModal(true);
     }
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem("aashya_legal_disclaimer_accepted", "true");
+    sessionStorage.setItem("aashya_legal_disclaimer_accepted", "true");
     document.body.style.overflow = "auto";
     setShowModal(false);
+    window.dispatchEvent(new Event("disclaimer_accepted"));
   };
 
   const handleDecline = () => {

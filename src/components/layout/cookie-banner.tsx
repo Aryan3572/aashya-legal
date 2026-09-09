@@ -12,24 +12,20 @@ export function CookieBanner() {
 
   useEffect(() => {
     setMounted(true);
-    const hasConsented = localStorage.getItem("aashya_legal_cookies_consented");
-    const hasAcceptedDisclaimer = localStorage.getItem("aashya_legal_disclaimer_accepted");
 
-    if (!hasConsented && hasAcceptedDisclaimer) {
-      setShowBanner(true);
-    }
+    const checkStatus = () => {
+      const hasConsented = localStorage.getItem("aashya_legal_cookies_consented");
+      const hasAcceptedDisclaimer = sessionStorage.getItem("aashya_legal_disclaimer_accepted");
 
-    // Check periodically in case disclaimer was just accepted on first visit
-    const interval = setInterval(() => {
-      const consented = localStorage.getItem("aashya_legal_cookies_consented");
-      const disclaimer = localStorage.getItem("aashya_legal_disclaimer_accepted");
-      if (!consented && disclaimer) {
+      if (!hasConsented && hasAcceptedDisclaimer) {
         setShowBanner(true);
-        clearInterval(interval);
       }
-    }, 600);
+    };
 
-    return () => clearInterval(interval);
+    checkStatus();
+
+    window.addEventListener("disclaimer_accepted", checkStatus);
+    return () => window.removeEventListener("disclaimer_accepted", checkStatus);
   }, []);
 
   const handleAccept = () => {
