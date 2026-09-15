@@ -64,7 +64,7 @@ export default function Home() {
                   <Button asChild size="lg" className="bg-bronze hover:bg-bronze/90 text-white rounded-none h-14 px-8 text-sm font-medium tracking-wide">
                     <Link href="/contact">BOOK A CONSULTATION</Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="rounded-none h-14 px-8 text-sm font-medium tracking-wide border-white text-white hover:bg-white hover:text-ink transition-colors">
+                  <Button asChild variant="outline" size="lg" className="rounded-none h-14 px-8 text-sm font-medium tracking-wide border-white text-black transition-colors">
                     <Link href="/practice-areas">OUR PRACTICE AREAS</Link>
                   </Button>
                 </motion.div>
