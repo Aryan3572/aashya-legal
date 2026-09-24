@@ -44,9 +44,13 @@ export default function InsightsPage() {
                   </p>
                   
                   <div className="flex items-center justify-between mt-auto pt-6 border-t border-ink/5">
-                    <span className="flex items-center text-xs text-ink/60">
-                      <User className="w-3 h-3 mr-1" /> {insight.author}
-                    </span>
+                    <div className="flex items-center text-xs text-ink/60">
+                      {insight.author && (
+                        <>
+                          <User className="w-3 h-3 mr-1" /> {insight.author}
+                        </>
+                      )}
+                    </div>
                     <span className="flex items-center text-sm font-medium text-ink group-hover:text-bronze transition-colors">
                       Read <ArrowRight className="ml-1 w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                     </span>
