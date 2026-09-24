@@ -62,10 +62,12 @@ export default async function InsightDetail({ params }: Props) {
                 <Calendar className="w-4 h-4 mr-2" />
                 {new Date(insight.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
               </span>
-              <span className="flex items-center">
-                <User className="w-4 h-4 mr-2" />
-                {insight.author}
-              </span>
+              {insight.author && (
+                <span className="flex items-center">
+                  <User className="w-4 h-4 mr-2" />
+                  {insight.author}
+                </span>
+              )}
             </div>
           </div>
         </header>
@@ -83,7 +85,11 @@ export default async function InsightDetail({ params }: Props) {
               {insight.summary}
             </p>
             <div className="text-ink/80 leading-relaxed font-light">
-              <p>{insight.content}</p>
+              {insight.contentHtml ? (
+                <div dangerouslySetInnerHTML={{ __html: insight.contentHtml }} />
+              ) : (
+                <p>{insight.content}</p>
+              )}
             </div>
           </div>
           
