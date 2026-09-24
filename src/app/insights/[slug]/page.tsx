@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ArrowLeft, Calendar, User, ChevronRight } from "lucide-react";
 import { insights } from "@/data/insights";
 
+const MEME_TO_COURTROOM_SLUG = "meme-to-courtroom-freedom-of-expression";
+
 interface Props {
   params: Promise<{
     slug: string;
@@ -16,6 +18,13 @@ export async function generateMetadata({ params }: Props) {
   if (!insight) {
     return {
       title: "Insight Not Found | Aashya Legal",
+    };
+  }
+
+  if (insight.slug === MEME_TO_COURTROOM_SLUG) {
+    return {
+      title: `${insight.title} | Aashya Legal Insights`,
+      description: "The internet has fundamentally changed the way people communicate.",
     };
   }
 
@@ -34,10 +43,15 @@ export async function generateStaticParams() {
 export default async function InsightDetail({ params }: Props) {
   const resolvedParams = await params;
   const insight = insights.find((i) => i.slug === resolvedParams.slug);
+  const isMemeToCourtroom = insight?.slug === MEME_TO_COURTROOM_SLUG;
 
   if (!insight) {
     notFound();
   }
+
+  const displayedAuthor = isMemeToCourtroom
+    ? "Ayushi\nB.A.LL.B, 2nd Year\nArmy Law College, Pune"
+    : insight.author;
 
   return (
     <>
@@ -62,10 +76,10 @@ export default async function InsightDetail({ params }: Props) {
                 <Calendar className="w-4 h-4 mr-2" />
                 {new Date(insight.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
               </span>
-              {insight.author && (
-                <span className="flex items-center">
+              {displayedAuthor && (
+                <span className={`flex ${isMemeToCourtroom ? "items-start" : "items-center"}`}>
                   <User className="w-4 h-4 mr-2" />
-                  {insight.author}
+                  <span className={isMemeToCourtroom ? "whitespace-pre-line" : ""}>{displayedAuthor}</span>
                 </span>
               )}
             </div>
@@ -81,9 +95,11 @@ export default async function InsightDetail({ params }: Props) {
           )}
           
           <div className="prose prose-lg prose-slate max-w-none prose-headings:font-heading prose-headings:font-medium prose-a:text-bronze hover:prose-a:text-ink">
-            <p className="text-xl font-light text-ink/80 leading-relaxed mb-8">
-              {insight.summary}
-            </p>
+            {!isMemeToCourtroom && (
+              <p className="text-xl font-light text-ink/80 leading-relaxed mb-8">
+                {insight.summary}
+              </p>
+            )}
             <div className="text-ink/80 leading-relaxed font-light">
               {insight.contentHtml ? (
                 <div dangerouslySetInnerHTML={{ __html: insight.contentHtml }} />
