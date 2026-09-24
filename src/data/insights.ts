@@ -383,42 +383,63 @@ export const insights: Insight[] = [
     category: "Research Paper",
     date: "2024-03-15",
     summary: "A study on regulating the carbon footprint of AI and corporate environmental responsibility in the tech sector.",
-    content: "Full paper content goes here.",
+    content: "Artificial intelligence has opened up major opportunities for economic growth, scientific research, public services, and environmental management, but building and running AI systems comes at an environmental cost: electricity use, data-centre construction, hardware manufacturing, water consumption, and e-waste.",
     contentHtml: `
       <div>
         <h2 class="text-2xl font-bold mb-4">Abstract</h2>
-        <p class="mb-6">[Abstract content to be inserted here]</p>
-        
-        <h2 class="text-2xl font-bold mb-4">Keywords</h2>
-        <p class="mb-6">[Keywords: e.g., AI Carbon Footprint, Corporate Environmental Responsibility, Tech Sector]</p>
-        
+        <p class="mb-6">Artificial intelligence has opened up major opportunities for economic growth, scientific research, public services, and environmental management, but building and running AI systems comes at an environmental cost: electricity use, data-centre construction, hardware manufacturing, water consumption, and e-waste. These costs sit awkwardly within corporate sustainability claims when organisations focus on AI's benefits while ignoring the emissions and resource use required to train, deploy, and maintain AI systems. As AI adoption expands, the question of corporate environmental responsibility becomes increasingly urgent.</p>
+
         <h2 class="text-2xl font-bold mb-4">1. Introduction</h2>
-        <p class="mb-4">[Introduction paragraphs to be inserted here]</p>
-        
-        <h2 class="text-2xl font-bold mb-4">2. Core Analysis</h2>
-        <p class="mb-4">[Body paragraphs, subheadings, and analysis to be inserted here]</p>
-        <ul class="list-disc pl-6 mb-6">
-          <li>[List item placeholder]</li>
-          <li>[List item placeholder]</li>
-        </ul>
-        
-        <h2 class="text-2xl font-bold mb-4">3. Tables & Figures (If Practical)</h2>
-        <div class="mb-6 p-4 bg-gray-50 border border-gray-200">
-          <p class="text-center italic text-gray-500">[Table or Figure placeholder]</p>
-        </div>
-        
-        <h2 class="text-2xl font-bold mb-4">4. Conclusion</h2>
-        <p class="mb-6">[Conclusion to be inserted here]</p>
-        
-        <h2 class="text-2xl font-bold mb-4">References</h2>
-        <ul class="list-decimal pl-6 mb-6">
-          <li>[Reference 1]</li>
-          <li>[Reference 2]</li>
-        </ul>
+        <p class="mb-4">Artificial intelligence has become one of the most influential technologies of the present decade. It supports scientific discovery, business automation, public services, and environmental analysis. At the same time, AI systems consume large amounts of electricity, rely on energy-hungry data centres, require specialised hardware, and create e-waste when devices become obsolete. These environmental costs are often hidden behind the language of innovation.</p>
+        <p class="mb-4">For the technology sector, corporate environmental responsibility cannot be limited to office recycling or generic sustainability statements. It must cover the full environmental footprint of AI products and services, including training, inference, storage, cooling, manufacturing, transportation, and disposal.</p>
+        <p class="mb-4">This paper argues that corporate environmental responsibility in the technology sector should be understood through life-cycle accountability, transparent disclosure, renewable-energy procurement, sustainable hardware management, and effective regulation. AI can support environmental goals, but only if its own footprint is measured honestly and reduced in practice.</p>
+        <p class="mb-6">The analysis below examines the carbon footprint of AI, the environmental benefits AI can generate, the rebound problem, corporate responsibility across the life cycle, regulatory responses, and strategies that technology companies should adopt to make AI more sustainable.</p>
+
+        <h2 class="text-2xl font-bold mb-4">2. The Carbon Footprint of Artificial Intelligence</h2>
+        <p class="mb-4">AI's carbon footprint is closely tied to the energy used by data centres and high-performance computing hardware. Training advanced models needs large numbers of processors running continuously for long stretches. Research on end-to-end speech-recognition systems found that even a small gain in model performance can come at a disproportionately high carbon cost, and concluded that the environmental burden of training and inference is not negligible and is likely to grow as models get larger.</p>
+        <p class="mb-4">AI systems consume energy at two stages: training, where a model learns from large datasets, and inference, where the trained model generates outputs for users. Training can involve heavy short-term energy use, but inference may end up being the bigger long-term burden once a system is deployed to millions of users. A systematic review of AI's life cycle found that inference energy demand can match or even exceed training-related consumption in large-scale deployments. That means environmental assessments cannot stop at the training stage.</p>
+        <p class="mb-4">AI's footprint is not limited to electricity either. It includes emissions from extracting raw materials, manufacturing semiconductors and servers, building data centres, transporting equipment, running cooling systems, and disposing of or recycling old hardware. The embodied emissions tied to data-centre infrastructure alone may account for roughly a third to two-thirds of total lifetime emissions. A company that reports only the electricity its servers use is therefore giving an incomplete picture of its environmental responsibility.</p>
+        <p class="mb-4">Corporate responsibility, in other words, has to cover resource use and waste management, not just carbon emissions.</p>
+
+        <h2 class="text-2xl font-bold mb-4">3. AI's Environmental Benefits and the Rebound Problem</h2>
+        <p class="mb-4">AI is not purely an environmental liability. It can help cut emissions elsewhere by improving forecasting, optimising complex systems, and flagging environmental risks. In the energy sector, AI can analyse demand patterns, predict renewable generation, evaluate suppliers, and help organisations decide when and how to buy electricity. AI-based procurement systems can also calculate carbon intensity across suppliers and model storage and grid-reliability options.</p>
+        <p class="mb-4">Healthcare is another area where AI may help. One study comparing an autonomous AI medical encounter with an in-person specialist visit found that autonomous AI could cut healthcare greenhouse-gas emissions by roughly 80% in the case examined, largely because it avoided the travel and infrastructure costs of an in-person consultation. That finding is a useful reminder that AI's environmental value depends entirely on what it replaces, and on the full emissions of the digital system doing the replacing.</p>
+        <p class="mb-4">AI also has a role in cybersecurity and scientific research. A carbon-aware anomaly-detection framework shows that environmental metrics can be built into cybersecurity workflows without weakening protection. In materials science, machine learning is being used to help discover materials that can store carbon dioxide, a promising application for climate innovation, though one that still needs its own training and inference emissions accounted for.</p>
+        <p class="mb-4">None of this means AI expansion should go unchecked, though. The rebound effect is a real concern: if efficiency gains make AI cheaper to use, companies and individuals may simply use more of it, so energy use per task falls even as total demand keeps rising. Forecasting research suggests that hardware and algorithmic efficiency could cut energy use per operation substantially, but aggregate AI electricity demand may still grow by roughly an order of magnitude because AI applications are expanding so fast.</p>
+        <p class="mb-6">Corporate responsibility, then, needs to look at both efficiency and scale. Companies should report not just the emissions intensity of a single query or model run but total energy consumption and total emissions. Otherwise, efficiency claims can end up masking the environmental cost of rising demand.</p>
+
+        <h2 class="text-2xl font-bold mb-4">4. Corporate Environmental Responsibility and Life-Cycle Accountability</h2>
+        <p class="mb-4">Corporate environmental responsibility means identifying, preventing, reducing, and disclosing the environmental consequences of a company's activities. For the technology sector, that responsibility should stretch across the whole AI life cycle: research and development, training, deployment, inference, storage, networking, hardware production, infrastructure construction, transport, maintenance, and disposal.</p>
+        <p class="mb-4">Life-cycle accounting matters because a lot of AI-related emissions happen outside a company's own operations. A tech firm might buy computing capacity from a cloud provider and report low direct energy use, even though its products drive substantial indirect emissions. Equally, a cloud provider might report its own operational electricity use without fully accounting for the emissions baked into chip manufacturing, building materials, and equipment replacement.</p>
+        <p class="mb-4">Supply-chain disclosure is a weak point generally: only around 60% of corporations reportedly disclose Scope 3 emissions, even though these can account for more than half of total emissions in some cases. That leaves room for companies to focus on their direct emissions while the larger footprint sitting with suppliers and infrastructure goes unexamined.</p>
+        <p class="mb-4">Technology companies should disclose the energy used in training and running major AI models, the carbon intensity of that electricity, the embodied emissions of hardware and data centres, water requirements, e-waste practices, and supplier performance, along with the methodology, boundaries, and uncertainty behind these figures.</p>
+        <p class="mb-6">Transparency matters here because carbon intensity varies a lot by provider and region. Reported average data-centre carbon intensities include roughly 152 grams of CO₂-equivalent per kilowatt-hour for Microsoft, 100 grams for Google, and 210 grams for Amazon Web Services. The same AI workload, in other words, can carry very different environmental costs depending on where it runs and what powers the grid there.</p>
+
+        <h2 class="text-2xl font-bold mb-4">5. Regulating AI's Environmental Impact</h2>
+        <p class="mb-4">Regulation matters because voluntary sustainability pledges do not, on their own, provide consistent accountability. There is evidence that environmental regulation pushes companies toward better environmental performance and green-technology innovation: research from China found that regulation encourages manufacturing firms to strengthen environmental responsibility and develop green technologies, an effect that gets stronger with more R&amp;D spending and environmental investment.</p>
+        <p class="mb-4">The first priority should be mandatory environmental reporting for large AI systems and data centres. Companies running energy-intensive models should disclose standardised information on energy use, emissions, water consumption, hardware, and supply-chain impacts, so investors, regulators, and communities can actually compare companies against each other.</p>
+        <p class="mb-4">The European Union offers an early example of AI-specific regulation along these lines. The EU AI Act includes energy and transparency requirements, and the European Commission is expected to develop standards covering energy efficiency and resource consumption across the life cycle of AI systems and general-purpose AI models. Providers of general-purpose models may also have to keep technical documentation on energy consumption, which the EU AI Office can request.</p>
+        <p class="mb-4">The EU framework also ties energy consumption to systemic risk: certain general-purpose models can be classified as posing systemic risk, and energy consumption is one factor relevant to that classification. That gives providers an extra reason to cut energy use, since lower consumption may ease regulatory burden in some cases.</p>
+        <p class="mb-4">Data-centre regulation is another piece of the puzzle. Under the EU Energy Efficiency Directive, data centres with a rated energy input above 1 megawatt may have to use or recover waste heat, and those with average annual consumption above 85 terajoules must run an energy-management system for continuous improvement. Member states can also require renewable-energy use, reductions in computing-related energy use, and transparent reporting.</p>
+        <p class="mb-4">Germany's Energy Efficiency Act shows how strict national implementation can get: it applies to data centres of 300 kilowatts or more, requires a 50% renewable-electricity share rising to 100% from January 2027, and adds obligations on energy reuse and power-usage effectiveness. Rules like this show how AI-related environmental regulation can build on existing data-centre and energy-efficiency law rather than starting from scratch.</p>
+        <p class="mb-6">Regulation should also push carbon-aware scheduling. Research on flexible training strategies shows that AI workloads can be postponed or paused when the grid's carbon intensity is high, and other work proposes combining spatial carbon shifting (moving workloads to regions with cleaner electricity) with temporal carbon shifting, which delays workloads to lower-carbon periods. These strategies work best for non-urgent training jobs and large-scale experiments that do not need to run immediately.</p>
+
+        <h2 class="text-2xl font-bold mb-4">6. Corporate Strategies for Sustainable AI</h2>
+        <p class="mb-4">Technology companies should adopt what might be called computational proportionality: the most powerful model available should not automatically be the default for every task. Smaller models, model compression, quantisation, specialised hardware, better data selection, and more efficient algorithms can all cut energy use while keeping performance adequate for the task at hand. Work on “Green AI” draws this distinction explicitly, separating resource-heavy “Red AI” from models built to reach comparable results at lower environmental cost.</p>
+        <p class="mb-4">Quantisation, in particular, can cut the computational demands of deployed systems by representing model parameters more efficiently. This matters especially in fields like agriculture, where inference may run repeatedly across large numbers of sensors and devices. The environmental cost of inference adds up fast once it is multiplied across an entire network.</p>
+        <p class="mb-4">Companies should also prioritise renewable electricity that is genuinely additional to existing supply. Power-purchase agreements can support new renewable generation, but corporate sustainability claims need to distinguish between additional clean generation, renewable-energy certificates, offsets, and electricity actually drawn from renewable sources. Using low-carbon electricity cuts operational emissions, but it does nothing for the embodied emissions already locked into buildings, steel, concrete, and semiconductors.</p>
+        <p class="mb-4">Boards and sustainability committees should be overseeing AI-related environmental risk directly, with executive incentives tied to energy intensity, total emissions, supply-chain disclosure, hardware reuse, and renewable procurement. Ideally, this reporting should be audited, so that claims can be checked rather than taken at face value.</p>
+
+        <h2 class="text-2xl font-bold mb-4">7. Conclusion</h2>
+        <p class="mb-4">Artificial intelligence is both an environmental problem and a potential tool for sustainability. Its benefits include optimising energy systems, cutting healthcare emissions, supporting environmental monitoring, strengthening cybersecurity, and driving green innovation. But these benefits have to be weighed against the energy, infrastructure, hardware, water, and waste costs AI itself creates.</p>
+        <p class="mb-4">The main weakness in current corporate practice is the lack of consistent, comprehensive, and verifiable accounting. A company that reports only its operational electricity use is likely understating its footprint, while a company that leans heavily on AI's climate applications may not be disclosing the emissions its own systems generate during training and deployment.</p>
+        <p class="mb-4">A responsible regulatory framework should require life-cycle carbon accounting, standardised disclosure, energy-efficiency standards, renewable-energy procurement, waste-heat recovery, sustainable hardware design, and carbon-aware scheduling. It should also encourage smaller models, more efficient algorithms, model compression, and more careful deployment generally. The EU AI Act and related energy-efficiency rules show that AI-specific environmental regulation is starting to take shape, even though key standards and implementation details are still incomplete.</p>
+        <p class="mb-4">Corporate environmental responsibility in the technology sector should not be treated as an obstacle to innovation. Well-designed regulation can push innovation toward systems that are more efficient, transparent, durable, and environmentally sound. The goal is not to stop AI development but to make sure its growth does not come at the cost of climate stability, natural resources, and future generations. Sustainable AI must therefore be judged not only by the problems it can help solve, but by whether its own environmental costs are honestly measured, disclosed, and reduced.</p>
+
       </div>
     `,
     author: "",
-    isPlaceholder: true
+    isPlaceholder: false
   }
 ];
 

@@ -4,6 +4,7 @@ import { ArrowLeft, Calendar, User, ChevronRight } from "lucide-react";
 import { insights } from "@/data/insights";
 
 const MEME_TO_COURTROOM_SLUG = "meme-to-courtroom-freedom-of-expression";
+const CORPORATE_ENV_RESPONSIBILITY_SLUG = "corporate-environmental-responsibility-tech-sector";
 
 interface Props {
   params: Promise<{
@@ -44,6 +45,7 @@ export default async function InsightDetail({ params }: Props) {
   const resolvedParams = await params;
   const insight = insights.find((i) => i.slug === resolvedParams.slug);
   const isMemeToCourtroom = insight?.slug === MEME_TO_COURTROOM_SLUG;
+  const isCorporateEnvResponsibility = insight?.slug === CORPORATE_ENV_RESPONSIBILITY_SLUG;
 
   if (!insight) {
     notFound();
@@ -95,7 +97,7 @@ export default async function InsightDetail({ params }: Props) {
           )}
           
           <div className="prose prose-lg prose-slate max-w-none prose-headings:font-heading prose-headings:font-medium prose-a:text-bronze hover:prose-a:text-ink">
-            {!isMemeToCourtroom && (
+            {!isMemeToCourtroom && !isCorporateEnvResponsibility && (
               <p className="text-xl font-light text-ink/80 leading-relaxed mb-8">
                 {insight.summary}
               </p>
