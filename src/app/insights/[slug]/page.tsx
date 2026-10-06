@@ -57,31 +57,31 @@ export default async function InsightDetail({ params }: Props) {
 
   return (
     <>
-      <article className="pt-24 pb-24">
+      <article className="pt-20 sm:pt-24 pb-16 sm:pb-24">
         {/* Header */}
-        <header className="bg-ivory py-16 md:py-24 border-b border-ink/10">
-          <div className="container mx-auto px-4 md:px-8 max-w-4xl">
-            <div className="flex items-center text-sm text-ink/60 mb-8 font-medium">
+        <header className="bg-ivory py-10 sm:py-16 md:py-20 border-b border-ink/10">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-4xl">
+            <div className="flex flex-wrap items-center text-xs sm:text-sm text-ink/60 mb-5 sm:mb-8 font-medium gap-1">
               <Link href="/insights" className="hover:text-ink transition-colors">
                 Insights
               </Link>
-              <ChevronRight className="w-4 h-4 mx-2" />
+              <ChevronRight className="w-3.5 h-3.5 mx-1 text-ink/40 shrink-0" />
               <span className="text-bronze">{insight.category}</span>
             </div>
             
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-medium text-ink leading-tight mb-8">
+            <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-ink leading-tight mb-6 sm:mb-8 break-words">
               {insight.title}
             </h1>
             
-            <div className="flex flex-wrap items-center text-sm text-ink/60 gap-6">
+            <div className="flex flex-wrap items-center text-xs sm:text-sm text-ink/60 gap-4 sm:gap-6">
               <span className="flex items-center">
-                <Calendar className="w-4 h-4 mr-2" />
+                <Calendar className="w-4 h-4 mr-2 shrink-0 text-bronze/70" />
                 {new Date(insight.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
               </span>
               {displayedAuthor && (
-                <span className={`flex ${isMemeToCourtroom ? "items-start" : "items-center"}`}>
-                  <User className="w-4 h-4 mr-2" />
-                  <span className={isMemeToCourtroom ? "whitespace-pre-line" : ""}>{displayedAuthor}</span>
+                <span className="flex items-start">
+                  <User className="w-4 h-4 mr-2 mt-0.5 shrink-0 text-bronze/70" />
+                  <span className="whitespace-pre-line">{displayedAuthor}</span>
                 </span>
               )}
             </div>
@@ -89,16 +89,16 @@ export default async function InsightDetail({ params }: Props) {
         </header>
 
         {/* Content */}
-        <div className="container mx-auto px-4 md:px-8 max-w-4xl py-16">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-4xl py-10 sm:py-16">
           {insight.isPlaceholder && (
-            <div className="bg-stone-brand/30 border border-stone-brand/50 p-4 mb-8 text-sm text-ink/70 rounded-sm">
+            <div className="bg-stone-brand/30 border border-stone-brand/50 p-4 mb-8 text-xs sm:text-sm text-ink/70 rounded-sm">
               Note: The content below is a placeholder provided during website development. Actual legal articles will be updated by the firm.
             </div>
           )}
           
-          <div className="prose prose-lg prose-slate max-w-none prose-headings:font-heading prose-headings:font-medium prose-a:text-bronze hover:prose-a:text-ink">
+          <div className="prose prose-base sm:prose-lg prose-slate max-w-none prose-headings:font-heading prose-headings:font-medium prose-a:text-bronze hover:prose-a:text-ink break-words">
             {!isMemeToCourtroom && !isCorporateEnvResponsibility && (
-              <p className="text-xl font-light text-ink/80 leading-relaxed mb-8">
+              <p className="text-lg sm:text-xl font-light text-ink/80 leading-relaxed mb-8">
                 {insight.summary}
               </p>
             )}
@@ -111,9 +111,9 @@ export default async function InsightDetail({ params }: Props) {
             </div>
           </div>
           
-          <div className="mt-16 pt-8 border-t border-ink/10">
-            <Link href="/insights" className="inline-flex items-center text-ink hover:text-bronze transition-colors font-medium">
-              <ArrowLeft className="w-4 h-4 mr-2" />
+          <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-ink/10">
+            <Link href="/insights" className="inline-flex items-center text-ink hover:text-bronze transition-colors font-medium text-sm sm:text-base">
+              <ArrowLeft className="w-4 h-4 mr-2 shrink-0" />
               Back to Insights
             </Link>
           </div>
