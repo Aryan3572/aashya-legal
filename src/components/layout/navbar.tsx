@@ -198,7 +198,7 @@ export function Navbar() {
             </Button>
 
             <div className="text-center text-xs text-ink/60 space-y-1">
-              <p className="font-medium text-ink/80">Delhi • Ranchi • Kerala • Patna</p>
+              <p className="font-medium text-ink/80">Jharkhand • Bihar • Delhi • Kerala</p>
               <p>aashyalegal@gmail.com</p>
             </div>
           </div>

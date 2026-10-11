@@ -35,7 +35,7 @@ export const insights: Insight[] = [
     slug: "recent-trends-in-commercial-arbitration",
     title: "Recent Trends in Domestic Commercial Arbitration",
     category: "Litigation",
-    date: "2024-01-10",
+    date: "2026-10-03",
     summary: "A review of recent Supreme Court judgments shaping the arbitration landscape in India.",
     content: "The pro-arbitration stance of Indian courts continues to strengthen. Recent rulings have clarified the scope of judicial intervention under Section 34 of the Arbitration and Conciliation Act. This update highlights key precedents that reinforce the finality of arbitral awards. [Placeholder Content - Actual legal article to be provided by Aashya Legal]",
     author: "Aashya Legal Dispute Resolution Team",
@@ -45,7 +45,7 @@ export const insights: Insight[] = [
     slug: "marital-rape-in-india-rethinking-consent",
     title: "Marital Rape in India: Rethinking Consent, Dignity and Constitutional Rights",
     category: "Research Paper",
-    date: "2024-03-01",
+    date: "2026-10-09",
     summary: "An in-depth analysis of marital rape in India, exploring consent, dignity, and constitutional rights.",
     content: "Full paper content goes here.",
     contentHtml: `
@@ -173,7 +173,7 @@ export const insights: Insight[] = [
     slug: "technology-gender-law-women-empowerment",
     title: "Technology, Gender and the Law: Examining Women Empowerment and Vulnerability in the Age of AI and Social Media",
     category: "Research Paper",
-    date: "2024-03-05",
+    date: "2026-10-03",
     summary: "An examination of women's empowerment and vulnerability at the intersection of technology, gender, and the law.",
     content: "Full paper content goes here.",
     contentHtml: `
@@ -283,7 +283,7 @@ export const insights: Insight[] = [
     slug: "meme-to-courtroom-freedom-of-expression",
     title: "From Meme to Courtroom: Defamation, Satire, Parody, Humour and the Limits of Freedom of Expression in the Digital Age",
     category: "Research Paper",
-    date: "2024-03-10",
+    date: "2026-10-04",
     summary: "Exploring the limits of freedom of expression, defamation, and humor in the context of digital age memes and satire.",
     content: "The internet has fundamentally changed the way people communicate.",
     contentHtml: `
@@ -381,7 +381,7 @@ export const insights: Insight[] = [
     slug: "corporate-environmental-responsibility-tech-sector",
     title: "Corporate Environmental Responsibility in the Technology Sector: Regulating the Carbon Footprint of Artificial Intelligence",
     category: "Research Paper",
-    date: "2024-03-15",
+    date: "2026-10-07",
     summary: "A study on regulating the carbon footprint of AI and corporate environmental responsibility in the tech sector.",
     content: "Artificial intelligence has opened up major opportunities for economic growth, scientific research, public services, and environmental management, but building and running AI systems comes at an environmental cost: electricity use, data-centre construction, hardware manufacturing, water consumption, and e-waste.",
     contentHtml: `
@@ -445,7 +445,7 @@ export const insights: Insight[] = [
     slug: "illusion-of-consent-dark-patterns-dpdp-act",
     title: "The Illusion of Consent: How Dark Patterns Undermine Consent Under India's DPDP Act, 2023",
     category: "Research Paper",
-    date: "2024-03-20",
+    date: "2026-10-07",
     summary: "An analysis of how manipulative interface designs and dark patterns undermine voluntary, informed consent under India's Digital Personal Data Protection Act, 2023.",
     content: "Consent is given merely by clicking a tick box. But this small button hides a harsh and complex reality. The digital platforms use interface designs that direct users toward choices allowing large collections of personal data.",
     contentHtml: `
@@ -478,7 +478,7 @@ export const insights: Insight[] = [
     slug: "reliability-standards-deepfake-evidence-criminal-proceedings",
     title: "Reliability Standards for Deepfake Evidence and AI-Generated Media in Criminal Proceedings",
     category: "Research Paper",
-    date: "2024-03-24",
+    date: "2026-10-06",
     summary: "Examining evidentiary standards, authentication challenges, and judicial scrutiny required for AI-generated media and deepfakes under the Bharatiya Sakshya Adhiniyam, 2023.",
     content: "The rapid development of generative artificial intelligence has fundamentally altered the evidentiary landscape of criminal justice. Audio recordings, photographs, videos and other digital material can now be generated or manipulated with increasing realism.",
     contentHtml: `
@@ -653,7 +653,7 @@ export const insights: Insight[] = [
     slug: "intellectual-property-creative-industries-digital-age",
     title: "Intellectual Property and Creative Industries: Protecting Creativity in the Digital Age",
     category: "Research Paper",
-    date: "2024-03-27",
+    date: "2026-10-08",
     summary: "Analyzing copyright, trademarks, design rights, and emerging challenges from generative AI and digital piracy across Indian creative sectors.",
     content: "Creative industries depend on ideas, artistic expression, reputation and innovation, making intellectual property one of their most important legal and economic foundations.",
     contentHtml: `
@@ -704,7 +704,7 @@ export const insights: Insight[] = [
     slug: "corroboration-rape-trials-victim-testimony-innocence",
     title: "Corroboration in Rape Trials: Balancing Victim Testimony and the Presumption of Innocence in Indian Courts",
     category: "Research Paper",
-    date: "2024-03-30",
+    date: "2026-10-11",
     summary: "An analysis of judicial standards balancing the weight of prosecutrix testimony with the presumption of innocence and proof beyond reasonable doubt in Indian courts.",
     content: "Full paper content goes here.",
     contentHtml: `
@@ -773,7 +773,7 @@ export const insights: Insight[] = [
     slug: "one-ballot-many-governments-electoral-synchronization-federalism",
     title: "One Ballot, Many Governments: The Constitutional Tension Between Electoral Synchronization and Federalism",
     category: "Research Paper",
-    date: "2024-04-03",
+    date: "2026-10-11",
     summary: "A constitutional examination of simultaneous elections in India, analyzing the tension between electoral synchronisation, state legislative autonomy, and the basic structure of federalism.",
     content: "Full paper content goes here.",
     contentHtml: `
@@ -891,7 +891,7 @@ export const insights: Insight[] = [
     slug: "rights-beyond-death-ai-replicas-personality-rights",
     title: "Rights Beyond Death: Copyright, Personality Rights and Control over AI-Generated Replicas of Deceased Persons in India",
     category: "Research Paper",
-    date: "2024-04-06",
+    date: "2026-10-13",
     summary: "Investigating the posthumous legal vacuum regarding AI resurrections, personality rights, and copyright under Indian jurisprudence.",
     content: "Full paper content goes here.",
     contentHtml: `
